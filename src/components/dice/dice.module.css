@@ -8,6 +8,8 @@
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
+
+    padding: 2vh 2vw;
 }
 
 .content{
