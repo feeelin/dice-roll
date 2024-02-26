@@ -1,17 +1,54 @@
-.container{
-    border: 3px solid white;
-    border-radius: 30px;
-    width: 50vw;
-    background-color: rgb(33, 21, 52);
+.diceContainer{
+    width: 8vw;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(33, 21, 52);
+    color: white;
+    padding: 0.5vh 0.5vw;
+    border: 1px solid white;
+    border-radius: 10%;
+
+    cursor: pointer;
+}
+
+.counterContainer{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    cursor: pointer;
-
-    padding: 2vh 2vw;
 }
 
-.content{
-    font-size: large;
+.clearButton{
+    border: none;
+    padding: 0.5vh 0.4vw;
+    border-radius: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #cb3737;
+}
+
+.minusButton{
+    border: none;
+    padding: 0.5vh 0.4vw;
+    border-radius: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ffe900;
+}
+
+.counterButtonsContainer{
+    display: flex;
+    gap: 0.2vw;
+}
+
+.counterDisplayContainer{
+    align-self: flex-end;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 100%
 }
