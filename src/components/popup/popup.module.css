@@ -1,0 +1,66 @@
+.myModal{
+    height: 20vh;
+    position: fixed;
+    bottom: 0;
+    display: none;
+    animation: load 0.5s forwards;
+}
+
+@keyframes load {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.myModalContent{
+    padding: 25px;
+    margin: 1vh 1vw;
+    background-color: rgb(12, 7, 19);
+    border: 1px solid white;
+    border-radius: 16px;
+    min-width: 250px;
+    height: fit-content;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vw;
+}
+
+.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.values{
+    color: white;
+    font-size: 2vh;
+}
+
+.description{
+    color: rgb(110, 75, 169);
+    font-size: 2vh;
+}
+
+.total{
+    font-size: 6vh;
+}
+
+.win{
+    color: green;
+}
+
+.loss{
+    color: red
+}
+
+.simple{
+    color: white
+}

@@ -2,8 +2,9 @@ import React from 'react';
 import Dice from "../dice/Dice.jsx";
 import classes from './dicesList.module.css'
 import {useDispatch, useSelector} from "react-redux";
+import getResult from "../../utils/getResult.js";
 
-const DicesList = () => {
+const DicesList = ({setVisible}) => {
     let k20Image = <svg width="75" height="75" viewBox="0 0 33 33" stroke="white" fill="none"><path d="M16.4997 1.99976L28.4997 9.95628M16.4997 1.99976L4.49969 9.95628M16.4997 1.99976V9.69541M28.4997 9.95628L16.4997 9.69541M28.4997 9.95628L23.9345 21.1737M28.4997 9.95628V22.3476M28.4997 22.3476L16.4997 30.4345M28.4997 22.3476L23.9345 21.1737M16.4997 30.4345L4.49969 22.3476M16.4997 30.4345L9.06491 21.1737M16.4997 30.4345L23.9345 21.1737M4.49969 22.3476V9.95628M4.49969 22.3476L9.06491 21.1737M4.49969 9.95628L16.4997 9.69541M4.49969 9.95628L9.06491 21.1737M16.4997 9.69541L9.06491 21.1737M16.4997 9.69541L23.9345 21.1737M9.06491 21.1737H23.9345" stroke="inherit"></path></svg>
     let k12Image = <svg width="75" height="75" viewBox="0 0 34 34" fill="none" stroke="white"><path d="M17 2.55005L25.2385 5.14952L30.8834 12.3363M17 2.55005L8.76157 5.14952L3.1167 12.3363M17 2.55005V10.3716M30.8834 12.3363V21.5109L25.2385 28.5448M30.8834 12.3363L23.6111 15.0115M25.2385 28.5448L17 31.45L8.76157 28.5448M25.2385 28.5448L20.9667 22.7005M8.76157 28.5448L3.1167 21.5109V12.3363M8.76157 28.5448L13.0334 22.7005M3.1167 12.3363L10.3889 15.0115M17 10.3716L23.6111 15.0115M17 10.3716L10.3889 15.0115M23.6111 15.0115L20.9667 22.7005M20.9667 22.7005H13.0334M13.0334 22.7005L10.3889 15.0115" stroke="inherit"></path></svg>
     let k10Image = <svg width="75" height="75" viewBox="0 0 34 34" fill="none" stroke="white"><path d="M16.8583 1.41675L31.7333 16.791M16.8583 1.41675L1.98328 16.791M16.8583 1.41675L24.0948 15.7121M16.8583 1.41675L9.62179 15.7121M31.7333 16.791L16.8583 32.3001M31.7333 16.791L24.0948 15.7121M16.8583 32.3001L1.98328 16.791M16.8583 32.3001V19.2185M1.98328 16.791L9.62179 15.7121M16.8583 19.2185L24.0948 15.7121M16.8583 19.2185L9.62179 15.7121" stroke="inherit"></path></svg>
@@ -29,8 +30,20 @@ const DicesList = () => {
                         <Dice image={k4Image} title='4'/>
                         <Dice image={k2Image} title='2'/>
                 </div>
+            <div className={classes.buttonContainer}>
+                <button className={classes.button} onClick={(event) => {
+                    getResult(dicesCount, dispatch)
+                    setVisible(true)
+                }}>Roll
+                </button>
+                <button className={classes.button} onClick={(event) => {
+                    dispatch(
+                        {type: 'CLEAR_DICES_COUNT'}
+                    )
+                }}>Clear all
+                </button>
+            </div>
 
-            <button className={classes.button}>Roll</button>
         </div>
     );
 };
