@@ -9,7 +9,7 @@ const getResult = (dicesCount, dispatch) => {
     let loss = 0
 
     for(let key in dicesCount){
-        if(dicesCount[key]){
+        if(dicesCount[key] > 0){
             description += `${dicesCount[key]}k${key} + `
             values += '('
             for(let i= 0; i<dicesCount[key]; i++){

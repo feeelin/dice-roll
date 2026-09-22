@@ -98,6 +98,24 @@ describe('getResult', () => {
         })
     })
 
+    it('ignores a dice type with a negative count instead of producing a malformed result (bugreport.md #4 fix)', () => {
+        const dices = { ...emptyDices(), '6': 1, '10': -1 }
+        getRandomInt.mockReturnValueOnce(4)
+
+        getResult(dices, dispatch)
+
+        expect(getRandomInt).toHaveBeenCalledTimes(1)
+        expect(dispatch).toHaveBeenNthCalledWith(1, {
+            type: 'SET_POPUP_CONTENT',
+            payload: {
+                values: '(4)',
+                description: '1k6',
+                total: 4,
+                type: 'simple',
+            },
+        })
+    })
+
     it('skips dice types with a zero count', () => {
         const dices = { ...emptyDices(), '6': 1, '10': 0 }
         getRandomInt.mockReturnValueOnce(4)

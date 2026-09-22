@@ -1,5 +1,5 @@
 
-const popupReducer = (state, action) => {
+const popupReducer = (state = false, action) => {
     switch(action.type){
         case 'SHOW_POPUP':
             console.log(true)
@@ -8,7 +8,7 @@ const popupReducer = (state, action) => {
             console.log(false)
             return false
         default:
-            return false
+            return state
     }
 }
 

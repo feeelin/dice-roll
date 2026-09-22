@@ -10,8 +10,7 @@ const Dice = ({image, title}) => {
     const dispatch = useDispatch()
 
     const addNumber = () => {
-        let output = dicesCount
-        output[title] = dicesCount[title] + 1
+        const output = { ...dicesCount, [title]: dicesCount[title] + 1 }
         setCurrentDiceCount(output[title])
 
         dispatch(
@@ -24,8 +23,7 @@ const Dice = ({image, title}) => {
 
     const clearNumber = (event) => {
         event.stopPropagation()
-        let output = dicesCount
-        output[title] = 0
+        const output = { ...dicesCount, [title]: 0 }
         setCurrentDiceCount(output[title])
 
         dispatch({
@@ -36,8 +34,7 @@ const Dice = ({image, title}) => {
 
     const decrementNumber = (event) => {
         event.stopPropagation()
-        let output = dicesCount
-        output[title] = dicesCount[title] - 1
+        const output = { ...dicesCount, [title]: Math.max(0, dicesCount[title] - 1) }
         setCurrentDiceCount(output[title])
 
         dispatch(

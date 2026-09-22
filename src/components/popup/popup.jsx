@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from "react"
 import classes from './popup.module.css'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-const Popup = ({visible, setVisible}) => {
+const Popup = () => {
 
     let rootClasses = [classes.myModal]
     let totalClasses = []
+    let visible = useSelector(state => state.popup)
     let content = useSelector(state => state.popupContent)
     let [popupContent, setPopupContent] = useState(content)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         setPopupContent(content)
@@ -30,7 +32,7 @@ const Popup = ({visible, setVisible}) => {
 
 
     return(
-        <div className={rootClasses.join(' ')} onClick={(event) => setVisible(false)}>
+        <div className={rootClasses.join(' ')} onClick={(event) => dispatch({type: 'HIDE_POPUP'})}>
             <div className={classes.myModalContent}>
                 <div>
                     <p className={classes.title}>Result</p>
