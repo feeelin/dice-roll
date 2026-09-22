@@ -1,12 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import { useEffect, useState, type MouseEvent, type ReactNode } from 'react';
 import classes from './dice.module.css'
 import {useDispatch, useSelector} from "react-redux";
+import type { DicesCount, DiceType } from '../model/dicesCount'
 
-const Dice = ({image, title}) => {
+interface DiceProps {
+    image: ReactNode
+    title: DiceType
+}
 
-    let dicesCount = useSelector(state => state.dices)
+const Dice = ({image, title}: DiceProps) => {
+
+    const dicesCount = useSelector((state: { dices: DicesCount }) => state.dices)
     const [currentDiceCount, setCurrentDiceCount] = useState(dicesCount[title])
-    const [diceChangeButtons, setDiceChangeButtons] = useState(<div></div>)
+    const [diceChangeButtons, setDiceChangeButtons] = useState<ReactNode>(<div></div>)
     const dispatch = useDispatch()
 
     const addNumber = () => {
@@ -21,7 +27,7 @@ const Dice = ({image, title}) => {
         )
     }
 
-    const clearNumber = (event) => {
+    const clearNumber = (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation()
         const output = { ...dicesCount, [title]: 0 }
         setCurrentDiceCount(output[title])
@@ -32,7 +38,7 @@ const Dice = ({image, title}) => {
         })
     }
 
-    const decrementNumber = (event) => {
+    const decrementNumber = (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation()
         const output = { ...dicesCount, [title]: Math.max(0, dicesCount[title] - 1) }
         setCurrentDiceCount(output[title])

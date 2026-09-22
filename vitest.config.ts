@@ -5,15 +5,15 @@ export default defineConfig({
     plugins: [react()],
     test: {
         environment: 'jsdom',
-        setupFiles: ['./vitest.setup.js'],
-        include: ['src/**/*.test.js', 'src/**/*.test.jsx'],
+        setupFiles: ['./vitest.setup.ts'],
+        include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
         coverage: {
             provider: 'v8',
             reporter: ['text', 'html', 'json-summary'],
             include: [
-                'src/shared/lib/**/*.js',
-                'src/entities/**/model/**/*.js',
-                'src/features/**/model/**/*.js',
+                'src/shared/lib/**/*.ts',
+                'src/entities/**/model/**/*.ts',
+                'src/features/**/model/**/*.ts',
             ],
             thresholds: {
                 lines: 100,

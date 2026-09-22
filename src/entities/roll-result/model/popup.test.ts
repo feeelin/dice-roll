@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import popupReducer from './popup.js'
+import popupReducer from './popup'
 
 describe('popupReducer', () => {
     it('returns true on SHOW_POPUP', () => {

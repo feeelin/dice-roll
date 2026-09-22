@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import dicesCountReducer from './dicesCount.js'
+import dicesCountReducer from './dicesCount'
 
 const zeroState = { '20': 0, '12': 0, '10': 0, '100': 0, '8': 0, '6': 0, '4': 0, '2': 0 }
 

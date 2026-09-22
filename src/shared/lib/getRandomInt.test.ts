@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest'
-import getRandomInt from './getRandomInt.js'
+import getRandomInt from './getRandomInt'
 
 describe('getRandomInt', () => {
     afterEach(() => {

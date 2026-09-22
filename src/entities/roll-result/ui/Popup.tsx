@@ -1,14 +1,15 @@
-import React, {useEffect, useState} from "react"
+import {useEffect, useState} from "react"
 import classes from './popup.module.css'
 import {useDispatch, useSelector} from "react-redux";
+import type { PopupContent } from '../model/poupContent'
 
 const Popup = () => {
 
-    let rootClasses = [classes.myModal]
-    let totalClasses = []
-    let visible = useSelector(state => state.popup)
-    let content = useSelector(state => state.popupContent)
-    let [popupContent, setPopupContent] = useState(content)
+    const rootClasses = [classes.myModal]
+    const totalClasses = []
+    const visible = useSelector((state: { popup: boolean }) => state.popup)
+    const content = useSelector((state: { popupContent: PopupContent }) => state.popupContent)
+    const [popupContent, setPopupContent] = useState(content)
     const dispatch = useDispatch()
 
     useEffect(() => {

@@ -1,10 +1,10 @@
-import { Dice, diceIcons } from "../../../entities/dice";
+import { Dice, diceIcons, type DicesCount } from "../../../entities/dice";
 import classes from './DiceBoard.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import { getResult } from "../../../features/roll-dice";
 
 const DiceBoard = () => {
-    const dicesCount = useSelector(state => state.dices)
+    const dicesCount = useSelector((state: { dices: DicesCount }) => state.dices)
     const dispatch = useDispatch()
 
     return (

@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-vi.mock('../../../shared/lib/getRandomInt.js', () => ({
+vi.mock('../../../shared/lib/getRandomInt', () => ({
     default: vi.fn(),
 }))
 
-import getRandomInt from '../../../shared/lib/getRandomInt.js'
-import getResult from './getResult.js'
+import getRandomInt from '../../../shared/lib/getRandomInt'
+import getResult from './getResult'
 
 const emptyDices = () => ({
     '20': 0, '12': 0, '10': 0, '100': 0, '8': 0, '6': 0, '4': 0, '2': 0,

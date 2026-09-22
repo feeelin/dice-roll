@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import popupContentReducer from './poupContent.js'
+import popupContentReducer from './poupContent'
 
 const defaultState = { values: '', description: '', total: 0, type: 'simple' }
 
