@@ -1,4 +1,4 @@
-import getRandomInt from "./getRandomInt.js";
+import getRandomInt from "../../../shared/lib/getRandomInt.js";
 
 const getResult = (dicesCount, dispatch) => {
     let values = ''

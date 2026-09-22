@@ -10,7 +10,11 @@ export default defineConfig({
         coverage: {
             provider: 'v8',
             reporter: ['text', 'html', 'json-summary'],
-            include: ['src/utils/**/*.js', 'src/store/reducers/**/*.js'],
+            include: [
+                'src/shared/lib/**/*.js',
+                'src/entities/**/model/**/*.js',
+                'src/features/**/model/**/*.js',
+            ],
             thresholds: {
                 lines: 100,
                 statements: 100,

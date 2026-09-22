@@ -2,9 +2,9 @@ import { describe, it, expect } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { combineReducers, createStore } from 'redux'
-import dicesCountReducer from '../../store/reducers/dicesCount.js'
-import popupReducer from '../../store/reducers/popup.js'
-import popupContentReducer from '../../store/reducers/poupContent.js'
+import dicesCountReducer from '../model/dicesCount.js'
+import popupReducer from '../../roll-result/model/popup.js'
+import popupContentReducer from '../../roll-result/model/poupContent.js'
 import Dice from './Dice.jsx'
 
 const buildStore = () => createStore(combineReducers({

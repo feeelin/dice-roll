@@ -1,7 +1,6 @@
 import {combineReducers, createStore} from 'redux'
-import dicesCountReducer from "./reducers/dicesCount.js";
-import popupReducer from './reducers/popup.js'
-import popupContentReducer from "./reducers/poupContent.js";
+import { dicesCountReducer } from "../entities/dice";
+import { popupReducer, popupContentReducer } from "../entities/roll-result";
 
 const rootReducer = combineReducers(
     {
