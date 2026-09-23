@@ -1,7 +1,7 @@
 import type { Dispatch, UnknownAction } from 'redux'
-import getRandomInt from "../../../shared/lib/getRandomInt";
-import type { DicesCount, DiceType } from "../../../entities/dice";
-import type { RollResultType } from "../../../entities/roll-result";
+import getRandomInt from "@/shared/lib/getRandomInt";
+import type { DicesCount, DiceType } from "@/entities/dice";
+import type { RollResultType } from "@/entities/roll-result";
 
 const getResult = (dicesCount: DicesCount, dispatch: Dispatch<UnknownAction>): void => {
     let values = ''

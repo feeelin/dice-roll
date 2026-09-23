@@ -3,8 +3,8 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { combineReducers, createStore } from 'redux'
 import dicesCountReducer from '../model/dicesCount'
-import popupReducer from '../../roll-result/model/popup'
-import popupContentReducer from '../../roll-result/model/poupContent'
+import popupReducer from '@/entities/roll-result/model/popup'
+import popupContentReducer from '@/entities/roll-result/model/poupContent'
 import Dice from './Dice'
 
 const buildStore = () => createStore(combineReducers({

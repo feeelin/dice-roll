@@ -8,6 +8,7 @@
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "noEmit": true,
+    "types": ["node"],
 
     "strict": true
   },
