@@ -1,17 +1,15 @@
-import {combineReducers, createStore} from 'redux'
+import { combineReducers, createStore } from "redux";
 import { dicesCountReducer } from "../entities/dice";
 import { popupReducer, popupContentReducer } from "../entities/roll-result";
 
-const rootReducer = combineReducers(
-    {
-        dices: dicesCountReducer,
-        popup: popupReducer,
-        popupContent: popupContentReducer,
-    }
-);
+const rootReducer = combineReducers({
+  dices: dicesCountReducer,
+  popup: popupReducer,
+  popupContent: popupContentReducer,
+});
 
-const store = createStore(rootReducer)
+const store = createStore(rootReducer);
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 
 export default store;

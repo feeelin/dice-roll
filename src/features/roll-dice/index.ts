@@ -1,1 +1,1 @@
-export { default as getResult } from './model/getResult'
+export { default as getResult } from "./model/getResult";

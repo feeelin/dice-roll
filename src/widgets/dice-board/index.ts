@@ -1,1 +1,1 @@
-export { default as DiceBoard } from './ui/DiceBoard'
+export { default as DiceBoard } from "./ui/DiceBoard";

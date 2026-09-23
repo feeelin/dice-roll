@@ -1,1 +1,1 @@
-export { default as DiceRollerPage } from './ui/DiceRollerPage'
+export { default as DiceRollerPage } from "./ui/DiceRollerPage";

@@ -1,7 +1,7 @@
 import { DiceRollerPage } from "../pages/dice-roller";
 
 function App() {
-  return <DiceRollerPage/>
+  return <DiceRollerPage />;
 }
 
-export default App
+export default App;
